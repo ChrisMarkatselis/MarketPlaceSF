@@ -1,1 +1,24 @@
-<p>symbol-table works!</p>
+
+<h3 class="d-inline-flex"><i class="pi pi-table" style="font-size: 1.5em"></i>Symbols</h3>
+
+
+<div class="ui-g-10">
+    <p-table [value]="newSymbol" selectionMode="single" [(selection)]="selectedRows">
+      <ng-template pTemplate="header">
+          <tr>
+              <th>Symbol</th>
+              <th>Description</th>
+              <th>Currency</th>
+              <th>Stock Exchange</th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-symbol>
+          <tr [pSelectableRow]="newSymbol" *ngFor="let newSymbols of newSymbol">
+              <td>{{newSymbols.symbol}}</td>
+              <td>{{newSymbols.description}}</td>
+              <td>{{newSymbols.currency}}</td>
+              <td>{{newSymbols.stockExchangeLong}}</td>
+          </tr>
+      </ng-template>
+    </p-table>
+</div>
