@@ -3,7 +3,7 @@
 
 
 <div class="ui-g-10">
-    <p-table [value]="newSymbol" selectionMode="single" [(selection)]="selectedRows">
+    <p-table [value]="newSymbol" selectionMode="single" [(selection)]="selectedSymbols" dataKey="symbol">
       <ng-template pTemplate="header">
           <tr>
               <th>Symbol</th>
@@ -13,7 +13,7 @@
           </tr>
       </ng-template>
       <ng-template pTemplate="body" let-symbol>
-          <tr [pSelectableRow]="newSymbol" *ngFor="let newSymbols of newSymbol">
+          <tr [pSelectableRow]="symbol" *ngFor="let newSymbols of newSymbol">
               <td>{{newSymbols.symbol}}</td>
               <td>{{newSymbols.description}}</td>
               <td>{{newSymbols.currency}}</td>

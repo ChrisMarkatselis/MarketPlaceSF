@@ -12,7 +12,7 @@ export class SymbolTableComponent implements OnInit {
 
   newSymbol: Symbol[] = [];
 
-  selectedRows: any[];
+  selectedSymbols: Symbol[];
   selectedRowsWL: any[];
 
   constructor(private projectService: ProjectService) { }
@@ -22,7 +22,7 @@ export class SymbolTableComponent implements OnInit {
       this.newSymbol = data;
     });
 
-    this.selectedRows = [];
+    this.selectedSymbols = [];
     this.selectedRowsWL = [];
 
   }
