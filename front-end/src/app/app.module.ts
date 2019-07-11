@@ -18,6 +18,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SymbolTableComponent } from './components/symbol-table/symbol-table.component';
+import { SymbolWatchlistComponent } from './components/symbol-watchlist/symbol-watchlist.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { SymbolTableComponent } from './components/symbol-table/symbol-table.com
     NotFoundComponent,
     HeaderComponent,
     FooterComponent,
-    SymbolTableComponent
+    SymbolTableComponent,
+    SymbolWatchlistComponent
   ],
   imports: [
     BrowserModule,
