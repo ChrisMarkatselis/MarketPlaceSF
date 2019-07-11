@@ -15,4 +15,8 @@ export class WatchListService {
     return this.http.get<Symbol[]>(this.endpointlist);
   }
 
+  //its not implemented well, yet. We have to fix it with the link which Damianos will tell us. Logical, we will have to transfer the symbol id, so I put selectedSymbol.id at enpoint.
+  postWatchList(selectedSymbol: Symbol) {
+    return this.http.post<Symbol[]>(this.endpointlist + '/', selectedSymbol.id);
+  }
 }
