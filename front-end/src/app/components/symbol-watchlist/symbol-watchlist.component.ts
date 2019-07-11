@@ -1,3 +1,5 @@
+import { WatchListService } from './../../services/watch-list.service';
+import { Symbol } from './../../models/symbol';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SymbolWatchlistComponent implements OnInit {
 
-  constructor() { }
+  watchlistSymbols: Symbol[] = [];
+
+  constructor(private watchListService: WatchListService) { }
 
   ngOnInit() {
+    this.watchListService.getWatchList().subscribe( (data) => {
+      this.watchlistSymbols = data;
+    })
   }
 
 }

@@ -16,4 +16,5 @@ export class ProjectService {
   getAllSymbol() {
     return this.http.get<Symbol[]>(this.endpointSymbol);
   }
+  
 }
