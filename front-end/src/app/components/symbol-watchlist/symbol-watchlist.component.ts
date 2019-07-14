@@ -1,6 +1,6 @@
 import { WatchListService } from './../../services/watch-list.service';
 import { Symbol } from './../../models/symbol';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-symbol-watchlist',
@@ -9,14 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SymbolWatchlistComponent implements OnInit {
 
-  watchlistSymbols: Symbol[] = [];
+
+  oldWatchList: Symbol[];
 
   constructor(private watchListService: WatchListService) { }
 
+
   ngOnInit() {
-    this.watchListService.getWatchList().subscribe( (data) => {
-      this.watchlistSymbols = data;
-    })
+    this.watchListService.getWatchList().subscribe( (watchlistSymbols) => {
+      this.oldWatchList = watchlistSymbols;
+    });
   }
 
 }

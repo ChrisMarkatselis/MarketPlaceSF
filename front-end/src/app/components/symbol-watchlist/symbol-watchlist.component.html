@@ -1,1 +1,15 @@
-<p>symbol-watchlist works!</p>
+<p-table [value]="oldWatchList"  >
+    <ng-template pTemplate="header">
+        <tr>
+          <th>Watch List</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-oldWatch>
+        <tr>
+          <td>{{oldWatch.symbol}}</td>
+        </tr>
+      </ng-template>
+</p-table>
+
+
+

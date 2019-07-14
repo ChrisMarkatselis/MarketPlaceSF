@@ -1,1 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+a { cursor: pointer }
+html, body {
+  height: 100%;
+}
+
+body .ui-menu {
+  height: 100%;
+  background-color: #17a2b8 !important;
+}
+
+body .desk-menu .ui-menu {
+  width: 100%;
+}
+
+body .ui-menu .ui-menuitem-link {
+  display: grid ;
+  text-align: center;
+}
+.ui-menuitem-icon:before {
+  font-size: 45px;
+}
+span.ui-menuitem-icon {
+  margin-left: calc(50% - 45px/2);
+}
+body .ui-menu .ui-submenu-header {
+  text-align: center;
+}
+
+.burger-menu .ng-trigger {
+  top: unset !important;
+}
+
+@media only screen and (max-width:1024px){
+  p-menu.desk-menu {
+    display: none;
+  }
+}
+
+@media only screen and (min-width:1025px){
+  body .burger-menu {
+    display: none;
+  }
+}
+
