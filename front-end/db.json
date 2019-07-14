@@ -1,0 +1,64 @@
+{
+  "watchlist": [
+    {
+      "id": "2",
+      "symbol": "CNY12324",
+      "description": "CNY12324 ",
+      "currency": "CNY12324",
+      "stockExchangeLong": "CNY12324"
+    },
+    {
+      "id": "3",
+      "symbol": "CNY123",
+      "description": "CNY123",
+      "currency": "CNY123",
+      "stockExchangeLong": "CNY123"
+    },
+    {
+      "id": "MB9__Ji"
+    },
+    {
+      "id": "9AYyQpq"
+    },
+    {
+      "id": "1",
+      "symbol": "CNY",
+      "description": "china",
+      "currency": "CHN",
+      "stockExchangeLong": "CHINA"
+    }
+  ],
+  "symbols": [
+    {
+      "id": "1",
+      "symbol": "CNY",
+      "description": "china",
+      "currency": "CHN",
+      "stockExchangeLong": "CHINA"
+    },
+    {
+      "id": "2",
+      "symbol": "CNY12324",
+      "description": "CNY12324 ",
+      "currency": "CNY12324",
+      "stockExchangeLong": "CNY12324"
+    },
+    {
+      "id": "3",
+      "symbol": "CNY123",
+      "description": "CNY123",
+      "currency": "CNY123",
+      "stockExchangeLong": "CNY123"
+    },
+    {
+      "id": "4",
+      "symbol": "CNY124",
+      "description": "CNY124",
+      "currency": "CNY124",
+      "stockExchangeLong": "CNY124"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

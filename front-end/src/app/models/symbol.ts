@@ -1,5 +1,5 @@
 export class Symbol {
-    id: number;
+    id?: number;
     symbol: string;
     description: string;
     currency: string;

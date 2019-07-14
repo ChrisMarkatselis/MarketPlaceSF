@@ -8,7 +8,9 @@ import { Observable } from 'rxjs';
 })
 export class ProjectService {
 
-  private readonly endpointSymbol = 'https://localhost:5001/api/symbols';
+  // private readonly endpointSymbol = 'https://localhost:5001/api/symbols';
+  //mock link from json db:
+  private readonly endpointSymbol = "http://localhost:3000/symbols";
 
   constructor(private http: HttpClient) { }
 

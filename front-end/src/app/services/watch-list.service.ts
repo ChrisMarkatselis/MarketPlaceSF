@@ -8,7 +8,9 @@ import { Subject, Observable } from 'rxjs';
 })
 export class WatchListService {
 
-  private readonly endpointlist = 'https://localhost:5001/api/watchlist/1';
+  //private readonly endpointlist = 'https://localhost:5001/api/watchlist/1';
+  //mock json server link:
+  private readonly endpointlist = "http://localhost:3000/watchlist";
 
   getSymbols$: Subject<Symbol[]>;
 
@@ -16,8 +18,15 @@ export class WatchListService {
     this.getSymbols$ = new Subject();
   }
 
+  //method for watchlist and user.id
+  //getUserWatchList(user: User): Symbol[] {
+  //  return this.http.get<Symbol[]>(this.endpointlist + "/" + user.id)
+  //}
+
+
+  //mock method for watchlist
   getWatchList() {
-    return this.http.get<Symbol[]>(this.endpointlist + "/1");
+    return this.http.get<Symbol[]>(this.endpointlist);
   }
 
   getListSymbols(): Observable<Symbol[]> {
@@ -29,7 +38,9 @@ export class WatchListService {
 
 
   //its not implemented well, yet. We have to fix it with the link which Damianos will tell us. Logical, we will have to transfer the symbol id, so I put selectedSymbol.id at enpoint.
-  postWatchList() {
-    return this.http.post<Symbol[]>(this.endpointlist);
+  postWatchList(symbol: Symbol) {
+    return this.http.post<Symbol>(this.endpointlist + "/", symbol).subscribe( responseData => {
+    });
   }
+
 }

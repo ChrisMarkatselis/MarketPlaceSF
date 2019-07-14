@@ -12,7 +12,13 @@ import { WatchListService } from 'src/app/services/watch-list.service';
 export class SymbolTableComponent implements OnInit {
 
   newSymbol: Symbol[] = [];
-  existedSymbols: Symbol[] = [];
+  existedSymbols: Symbol = {
+    id: null,
+    symbol: '',
+    description: '',
+    currency: '',
+    stockExchangeLong: ''
+  };
 
   cols: any[];
 
@@ -33,31 +39,33 @@ export class SymbolTableComponent implements OnInit {
       ]
     });
 
-    this.watchListService.getWatchList().subscribe( (watchlistSymbols) => {
-      this.existedSymbols = watchlistSymbols;
-    });
-
     this.selectedSymbols = [];
     this.selectedRowsWL = [];
 
   }
 
 
-  addSymbol(newSymbol):Symbol {
+  addSymbol(newSymbol) {
     console.log(newSymbol.symbol);
+    let count: number;    
 
-    if (this.existedSymbols.length >= 5) {
-      alert( 'You can not put another symbol at your watchlist, remove one first! ');
-    } else if (( this.selectedSymbols.findIndex(s => s.id === newSymbol.id) > -1) || (this.existedSymbols.length > 5) ) {
+    // if (this.existedSymbols >= 5) {
+    //   alert( 'You can not put another symbol at your watchlist, remove one first! ');
+    // } else 
+    // if (( this.selectedSymbols.findIndex(s => s.id === newSymbol.id) > -1) ) 
+    if (newSymbol === this.existedSymbols)
+    {
       console.log( 'Trying to add an existing symbol' );
-    } else {
-      this.existedSymbols.push(newSymbol);
+    } else 
+    {
+      this.existedSymbols.id = newSymbol.id;
+      this.existedSymbols.symbol = newSymbol.symbol;
+      this.existedSymbols.description = newSymbol.description;
+      this.existedSymbols.currency = newSymbol.currency;
+      this.existedSymbols.stockExchangeLong = newSymbol.stockExchangeLong;
+
       console.log(this.existedSymbols);
-      this.watchListService.postWatchList().subscribe( (data) =>{
-              this.existedSymbols = data.id,
-             this.existedSymbols = data.symbol,
-            this.existedSymbols = data.description;
-           });
+      this.watchListService.postWatchList(this.existedSymbols);
     }
 
   };
